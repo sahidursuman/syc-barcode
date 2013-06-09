@@ -1,0 +1,13 @@
+= Barcode
+Creating barcodes (at the moment only Interleave2of5). Addionally labels can be created amended with a barcode
+
+== Usage
+Create the barcode string and the barcode graphics data
+    i2o5 = Interleave2of5("01199")
+    code = i2o5.encode
+    barcode = i2o5.barcode
+
+The barcode can be used to create a graphical representation of the barcode.
+
+== Licencse
+Barcode is published under the MIT license
