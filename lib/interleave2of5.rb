@@ -1,12 +1,19 @@
 require_relative 'checked_attributes'
+require_relative 'barcode'
 
-class Interleave2of5
+class Interleave2of5 < Barcode
   include CheckedAttributes
 
   OPTIONS = {
-    check: true,
-    width: 2,
+    x: 0,
+    y: 0,
+    width: 1,
     factor: 2,
+    quiet: 20,
+    bearer: :none, # possible selections :none, :frame, :rule
+    bearer_width: 1,
+    top_margin: 10,
+    bottom_margin: 10,
     height: 50
   }
 
@@ -29,13 +36,13 @@ class Interleave2of5
     |v| v.scan(/\D/).empty?
   end
 
-  attr_accessor :options
-  attr_reader   :code, :graph
+  attr_accessor :check, :options
+  attr_reader   :code, :encodable, :graph
 
-  def initialize(value, options={})
+  def initialize(value, check=true)
     raise ArgumentError unless value.scan(/\D/).empty?
     @value = value
-    @options = OPTIONS.merge(options)
+    @check = check
   end
 
   def to_s
@@ -54,19 +61,27 @@ class Interleave2of5
       @code += 0.upto(4).map { |j| first[j] + second[j] }.join
     end 
     @code = SYMBOLOGY[:start] + @code + SYMBOLOGY[:stop]
+    self
   end
 
   def barcode(options={})
     @options = OPTIONS.merge(options)
     
+    y_offset = @options[:bearer] != :none  ? @options[:bearer_width] : 0 
+    x_offset = @options[:bearer] == :frame ? @options[:bearer_width] : 0 
+
     @graph = { 
-      graph_width: 0,
-      y: @options[:y] || 0,
+      total_width: 2 * x_offset + 2 * @options[:quiet],
+      total_height: @options[:height] + 2 * y_offset + @options[:top_margin] + 
+                    @options[:bottom_margin],
+      x: @options[:x] + @options[:quiet] + x_offset, 
+      y: @options[:y] + @options[:bottom_margin] + y_offset,
       height: @options[:height],
-      bars: []
+      bars: [],
+      graph_width: 0
     }
 
-    x = 0
+    x = @graph[:x]
     
     @code.each_char.with_index do |v, i|
       width = @options[:width]
@@ -75,21 +90,21 @@ class Interleave2of5
       end
       @graph[:bars] << { x: x, width: width } if i.even?
       x += width
+      @graph[:graph_width] += width
     end
 
-    @graph[:graph_width] = x
+    @graph[:total_width] += @graph[:graph_width]
 
-    @graph
   end
 
   private
     
     def add_check_digit_and_ensure_even_digit_size
       reverse_value = @value.split('').reverse
-      @check_digit = reverse_value.each_with_index.collect do |v, i|
+      @check_digit = 10 - reverse_value.each_with_index.collect do |v, i|
         i.even? ? v.to_i * 3 : v.to_i
-      end.inject(:+) % 10 if @options[:check]
-      @encodable = @value + (@options[:check] ? @check_digit.to_s : "")
+      end.inject(:+) % 10 if @check
+      @encodable = @value + (@check ? @check_digit.to_s : "")
       @encodable = "0" + @encodable if @encodable.size.odd?
       @encodable
     end
