@@ -94,7 +94,7 @@ class Interleave2of5 < Barcode
     end
 
     @graph[:total_width] += @graph[:graph_width]
-
+    @graph
   end
 
   private

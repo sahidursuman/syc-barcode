@@ -1,5 +1,1 @@
 require_relative '../lib/interleave2of5'
-require_relative '../lib/label_element'
-require_relative '../lib/text_element'
-require_relative '../lib/table_element'
-require_relative '../lib/barcode_element'

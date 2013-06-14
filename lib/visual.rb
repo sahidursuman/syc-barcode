@@ -3,6 +3,7 @@ require 'prawn'
 module Visual
 
   def to_pdf(pdf, options={})
+    pdf.undash
     barcode(options)
     @graph[:bars].each do |b|
       pdf.move_to(b[:x],             @graph[:y])
@@ -32,7 +33,6 @@ module Visual
       pdf.line_to(@options[:x],
                   @options[:y] + @options[:bottom_margin])
     end
-    puts @options
     @graph
   end
 
