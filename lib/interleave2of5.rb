@@ -1,9 +1,11 @@
 require_relative 'checked_attributes'
 require_relative 'barcode'
 
+# Creates a Interleave 2 of 5 barcode
 class Interleave2of5 < Barcode
   include CheckedAttributes
 
+  # Holds the options for an Interleave 2 of 5 barcode
   OPTIONS = {
     x: 0,
     y: 0,
@@ -17,6 +19,7 @@ class Interleave2of5 < Barcode
     height: 50
   }
 
+  # Symbology the translates numbers to barcode symbology
   SYMBOLOGY = { 
     start: "0000", 
     stop:  "100", 
@@ -39,12 +42,14 @@ class Interleave2of5 < Barcode
   attr_accessor :check, :options
   attr_reader   :code, :encodable, :graph
 
+  # Takes a value and whether a check digit is required
   def initialize(value, check=true)
     raise ArgumentError unless value.scan(/\D/).empty?
     @value = value
     @check = check
   end
 
+  # Prints the values of Interleave2of5
   def to_s
     "value: #{@value}\n"+
     "options: #{@options.inspect}\n"+
@@ -52,6 +57,7 @@ class Interleave2of5 < Barcode
     "code: #{@code}\n"
   end
 
+  # Encodes the value string to a barcode sequence consistent of 0 and 1
   def encode
     @code = ""
     add_check_digit_and_ensure_even_digit_size
@@ -64,6 +70,7 @@ class Interleave2of5 < Barcode
     self
   end
 
+  # Creates the barcode coordinates for a visual representation
   def barcode(options={})
     @options = OPTIONS.merge(options)
     
@@ -99,11 +106,13 @@ class Interleave2of5 < Barcode
 
   private
     
+    # Adds a check digit if check is true and ensures even digit size
     def add_check_digit_and_ensure_even_digit_size
       reverse_value = @value.split('').reverse
       @check_digit = 10 - reverse_value.each_with_index.collect do |v, i|
         i.even? ? v.to_i * 3 : v.to_i
       end.inject(:+) % 10 if @check
+      @check_digit = 0 if @check_digit == 10
       @encodable = @value + (@check ? @check_digit.to_s : "")
       @encodable = "0" + @encodable if @encodable.size.odd?
       @encodable

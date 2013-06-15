@@ -5,7 +5,7 @@ require 'barby/outputter/png_outputter'
 
 require_relative 'interleave2of5'
 
-i2o5 = Interleave2of5.new("00317")
+i2o5 = Interleave2of5.new("24125")
 code = i2o5.encode.code
 barcode = i2o5.barcode(x: 15, width:1, factor: 2, height: 40)
 

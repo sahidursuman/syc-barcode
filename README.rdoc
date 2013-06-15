@@ -1,11 +1,13 @@
 = Barcode
-Creating barcodes (at the moment only Interleave2of5). Addionally labels can be created amended with a barcode
+Creating barcodes (at the moment only Interleave2of5). 
 
 == Usage
 Create the barcode string and the barcode graphics data
     i2o5 = Interleave2of5("01199")
     code = i2o5.encode
     barcode = i2o5.barcode
+    pdf = Prawn::Document.new
+    barcode.to_pdf(pdf)
 
 The barcode can be used to create a graphical representation of the barcode.
 

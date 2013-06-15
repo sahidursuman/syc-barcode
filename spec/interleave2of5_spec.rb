@@ -21,6 +21,18 @@ describe "Interleave2of5" do
       to raise_exception(ArgumentError)
   end
 
+  it "same digit size should result in same code size" do
+    @i2o5.value = "24123"
+    code_size_with_check_digit_not_0 = @i2o5.encode.code.size
+    puts @i2o5
+    puts code_size_with_check_digit_not_0
+    @i2o5.value = "24125"
+    code_size_with_check_digit_0 = @i2o5.encode.code.size
+    puts @i2o5
+    puts code_size_with_check_digit_0
+    code_size_with_check_digit_not_0.should eq code_size_with_check_digit_0 
+  end
+
   it "should calculate barcode value with check digit" do
     @i2o5.value = "1"
     @i2o5.encode.code.should eq "00001000000111100"

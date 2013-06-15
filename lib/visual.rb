@@ -1,7 +1,9 @@
 require 'prawn'
 
+# Methods to visualize a barcode
 module Visual
 
+  # Adds a barcode to a pdf file
   def to_pdf(pdf, options={})
     pdf.undash
     barcode(options)
