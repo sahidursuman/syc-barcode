@@ -1,0 +1,2 @@
+module SycBarcode
+end

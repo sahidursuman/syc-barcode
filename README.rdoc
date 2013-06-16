@@ -1,5 +1,5 @@
 = Barcode
-Creating barcodes (at the moment only Interleave2of5). 
+Creating barcodes (at the moment only Interleaved2of5). 
 
 == Usage
 Create the barcode string and the barcode graphics data
@@ -9,7 +9,18 @@ Create the barcode string and the barcode graphics data
     pdf = Prawn::Document.new
     barcode.to_pdf(pdf)
 
+When used with rails add
+    require 'interleave2of5'
+to config/application.rb
+
 The barcode can be used to create a graphical representation of the barcode.
+
+== Release Notes
+* Version 0.0.1
+  Create barcode Interleaved 2 of 5 that can be added to a pdf file
+
+* Version 0.0.2
+  Fix check digit calculation
 
 == Licencse
 Barcode is published under the MIT license

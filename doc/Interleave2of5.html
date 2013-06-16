@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Interleave2of5 - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/interleave2of5.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Barcode.html">Barcode</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="CheckedAttributes.html">CheckedAttributes</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-barcode">#barcode</a>
+    
+    <li><a href="#method-i-encode">#encode</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CheckedAttributes.html">CheckedAttributes</a>
+  
+    <li><a href="./CheckedAttributes/ClassMethods.html">CheckedAttributes::ClassMethods</a>
+  
+    <li><a href="./Barcode.html">Barcode</a>
+  
+    <li><a href="./Interleave2of5.html">Interleave2of5</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Visual.html">Visual</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Interleave2of5</h1>
+
+  <div id="description" class="description">
+    
+<p>Creates a Interleave 2 of 5 barcode</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="OPTIONS">OPTIONS
+        
+        <dd class="description"><p>Holds the options for an Interleave 2 of 5 barcode</p>
+        
+      
+        <dt id="SYMBOLOGY">SYMBOLOGY
+        
+        <dd class="description"><p>Symbology the translates numbers to barcode symbology</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-check" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">check</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-code" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">code</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-encodable" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">encodable</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-graph" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">graph</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(value, check=true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Takes a value and whether a check digit is required</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/interleave2of5.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">check</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\D/</span>).<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-ivar">@check</span> = <span class="ruby-identifier">check</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-barcode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">barcode</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates the barcode coordinates for a visual representation</p>
+          
+
+          
+          <div class="method-source-code" id="barcode-source">
+            <pre><span class="ruby-comment"># File lib/interleave2of5.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">barcode</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  
+  <span class="ruby-identifier">y_offset</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:bearer</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">:none</span>  <span class="ruby-operator">?</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:bearer_width</span>] <span class="ruby-operator">:</span> <span class="ruby-value">0</span> 
+  <span class="ruby-identifier">x_offset</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:bearer</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:frame</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:bearer_width</span>] <span class="ruby-operator">:</span> <span class="ruby-value">0</span> 
+
+  <span class="ruby-ivar">@graph</span> = { 
+    <span class="ruby-identifier">total_width</span><span class="ruby-operator">:</span> <span class="ruby-value">2</span> * <span class="ruby-identifier">x_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span> * <span class="ruby-ivar">@options</span>[<span class="ruby-value">:quiet</span>],
+    <span class="ruby-identifier">total_height</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:height</span>] <span class="ruby-operator">+</span> <span class="ruby-value">2</span> * <span class="ruby-identifier">y_offset</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:top_margin</span>] <span class="ruby-operator">+</span> 
+                  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:bottom_margin</span>],
+    <span class="ruby-identifier">x</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:x</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:quiet</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">x_offset</span>, 
+    <span class="ruby-identifier">y</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:y</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:bottom_margin</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">y_offset</span>,
+    <span class="ruby-identifier">height</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:height</span>],
+    <span class="ruby-identifier">bars</span><span class="ruby-operator">:</span> [],
+    <span class="ruby-identifier">graph_width</span><span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  }
+
+  <span class="ruby-identifier">x</span> = <span class="ruby-ivar">@graph</span>[<span class="ruby-value">:x</span>]
+  
+  <span class="ruby-ivar">@code</span>.<span class="ruby-identifier">each_char</span>.<span class="ruby-identifier">with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">width</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:width</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;1&quot;</span>
+      <span class="ruby-identifier">width</span> = <span class="ruby-identifier">width</span> * <span class="ruby-ivar">@options</span>[<span class="ruby-value">:factor</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@graph</span>[<span class="ruby-value">:bars</span>] <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">x</span><span class="ruby-operator">:</span> <span class="ruby-identifier">x</span>, <span class="ruby-identifier">width</span><span class="ruby-operator">:</span> <span class="ruby-identifier">width</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">even?</span>
+    <span class="ruby-identifier">x</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">width</span>
+    <span class="ruby-ivar">@graph</span>[<span class="ruby-value">:graph_width</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">width</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@graph</span>[<span class="ruby-value">:total_width</span>] <span class="ruby-operator">+=</span> <span class="ruby-ivar">@graph</span>[<span class="ruby-value">:graph_width</span>]
+  <span class="ruby-ivar">@graph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- barcode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- barcode-method -->
+
+    
+      <div id="method-i-encode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Encodes the value string to a barcode sequence consistent of 0 and 1</p>
+          
+
+          
+          <div class="method-source-code" id="encode-source">
+            <pre><span class="ruby-comment"># File lib/interleave2of5.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encode</span>
+  <span class="ruby-ivar">@code</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">add_check_digit_and_ensure_even_digit_size</span>
+  <span class="ruby-value">0</span>.<span class="ruby-identifier">step</span>(<span class="ruby-ivar">@encodable</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>, <span class="ruby-value">2</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">first</span> = <span class="ruby-constant">SYMBOLOGY</span>[<span class="ruby-ivar">@encodable</span>[<span class="ruby-identifier">i</span>]]
+    <span class="ruby-identifier">second</span> = <span class="ruby-constant">SYMBOLOGY</span>[<span class="ruby-ivar">@encodable</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>]]
+    <span class="ruby-ivar">@code</span> <span class="ruby-operator">+=</span> <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-value">4</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">first</span>[<span class="ruby-identifier">j</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">second</span>[<span class="ruby-identifier">j</span>] }.<span class="ruby-identifier">join</span>
+  <span class="ruby-keyword">end</span> 
+  <span class="ruby-ivar">@code</span> = <span class="ruby-constant">SYMBOLOGY</span>[<span class="ruby-value">:start</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@code</span> <span class="ruby-operator">+</span> <span class="ruby-constant">SYMBOLOGY</span>[<span class="ruby-value">:stop</span>]
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- encode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- encode-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prints the values of <a href="Interleave2of5.html">Interleave2of5</a></p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/interleave2of5.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;value: #{@value}\n&quot;</span><span class="ruby-operator">+</span>
+  <span class="ruby-node">&quot;options: #{@options.inspect}\n&quot;</span><span class="ruby-operator">+</span>
+  <span class="ruby-node">&quot;encodable: #{@encodable ? @encodable : '#encode not run yet'}\n&quot;</span><span class="ruby-operator">+</span>
+  <span class="ruby-node">&quot;code: #{@code}\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
