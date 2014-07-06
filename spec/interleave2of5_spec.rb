@@ -64,4 +64,11 @@ describe "Interleave2of5" do
     puts @i2o5.encode.to_pdf(pdf).inspect
   end
 
+  it "should check whether the decoded number is a valid barcode" do
+    Interleave2of5.valid?("002127").should be true
+    Interleave2of5.valid?("002128").should be false
+    Interleave2of5.valid?("00212").should be false
+    Interleave2of5.valid?("000212", false).should be true
+  end
+
 end

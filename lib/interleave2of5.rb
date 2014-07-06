@@ -1,11 +1,11 @@
 require_relative 'checked_attributes'
 require_relative 'barcode'
 
-# Creates a Interleave 2 of 5 barcode
+# Creates a Interleaved 2 of 5 barcode
 class Interleave2of5 < Barcode
   include CheckedAttributes
 
-  # Holds the options for an Interleave 2 of 5 barcode
+  # Holds the options for an Interleaved 2 of 5 barcode
   OPTIONS = {
     x: 0,
     y: 0,
@@ -104,18 +104,44 @@ class Interleave2of5 < Barcode
     @graph
   end
 
+  # Returns true if the decoded value (e.g. returned by a barcode scanner) is
+  # a valid barcode. Validity is identified by the check digit. If no check
+  # digit is given valid? will return true if the decoded value's size is even
+  #
+  # Example
+  #     Interleave2of5.valid? "002127", true -> true
+  #     Interleave2of5.valid? "002128", true -> false
+  #     Interleave2of5.valid? "00212", false -> false
+  def self.valid?(decoded, check_digit = true)
+    return false if decoded.size.odd?
+    if check_digit
+      value = decoded[0...decoded.size-1]
+      check = decoded[decoded.size-1]
+      return check_digit_for(value) == check
+    else
+      true
+    end
+  end
+
   private
     
     # Adds a check digit if check is true and ensures even digit size
     def add_check_digit_and_ensure_even_digit_size
-      reverse_value = @value.split('').reverse
-      @check_digit = 10 - reverse_value.each_with_index.collect do |v, i|
-        i.even? ? v.to_i * 3 : v.to_i
-      end.inject(:+) % 10 if @check
-      @check_digit = 0 if @check_digit == 10
+      @check_digit = self.class.check_digit_for @value
       @encodable = @value + (@check ? @check_digit.to_s : "")
       @encodable = "0" + @encodable if @encodable.size.odd?
       @encodable
+    end
+
+    # Calculate the check digit for the provided value
+    def self.check_digit_for(value)
+      reverse_value = value.split('').reverse
+      check = 10 - reverse_value.each_with_index.collect do |v, i|
+        i.even? ? v.to_i * 3 : v.to_i
+      end.inject(:+) % 10
+      check = 0 if check == 10
+
+      check.to_s
     end
 
 end
