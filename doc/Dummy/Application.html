@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module CheckedAttributes::ClassMethods - RDoc Documentation</title>
+<title>class Dummy::Application - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
 
 
-<body id="top" class="module">
+<body id="top" class="class">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>lib/checked_attributes.rb
+    <li>syc_barcode/test/dummy/config/application.rb
   </ul>
 </nav>
 
@@ -56,19 +56,15 @@
 
   <div id="class-metadata">
     
-    
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-attr_checked">#attr_checked</a>
-    
-  </ul>
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Rails::Application
+  
 </nav>
 
+    
+    
   </div>
 
   <div id="project-metadata">
@@ -132,13 +128,10 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="module">module CheckedAttributes::ClassMethods</h1>
+  <h1 class="class">class Dummy::Application</h1>
 
   <div id="description" class="description">
     
-<p>Creates the <a
-href="ClassMethods.html#method-i-attr_checked">#attr_checked</a> method</p>
-
   </div><!-- description -->
 
   
@@ -155,50 +148,6 @@ href="ClassMethods.html#method-i-attr_checked">#attr_checked</a> method</p>
 
     <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-attr_checked" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">attr_checked</span><span
-            class="method-args">(attribute, &validation)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p><a href="ClassMethods.html#method-i-attr_checked">#attr_checked</a>
-evaluates whether the value is valid</p>
-          
-
-          
-          <div class="method-source-code" id="attr_checked-source">
-            <pre><span class="ruby-comment"># File lib/checked_attributes.rb, line 13</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">attr_checked</span>(<span class="ruby-identifier">attribute</span>, &amp;<span class="ruby-identifier">validation</span>)
-  <span class="ruby-identifier">define_method</span> <span class="ruby-node">&quot;#{attribute}=&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">validation</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">value</span>)
-    <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{attribute}&quot;</span>, <span class="ruby-identifier">value</span>)
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">attribute</span> <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">instance_variable_get</span> <span class="ruby-node">&quot;@#{attribute}&quot;</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- attr_checked-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- attr_checked-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
   </section><!-- 5Buntitled-5D -->
 
 </div><!-- documentation -->

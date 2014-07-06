@@ -53,6 +53,18 @@
   
     <li class="file"><a href="./README_rdoc.html">README</a>
   
+    <li class="file"><a href="./syc_barcode/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./syc_barcode/MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./syc_barcode/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./syc_barcode/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./syc_barcode/test/dummy/README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./syc_barcode/test/dummy/Rakefile.html">Rakefile</a>
+  
   </ul>
 </nav>
 
@@ -65,11 +77,23 @@
   
     <li><a href="./CheckedAttributes/ClassMethods.html">CheckedAttributes::ClassMethods</a>
   
+    <li><a href="./Dummy.html">Dummy</a>
+  
+    <li><a href="./Dummy/Application.html">Dummy::Application</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
     <li><a href="./Barcode.html">Barcode</a>
   
     <li><a href="./Interleave2of5.html">Interleave2of5</a>
   
     <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./SycBarcode.html">SycBarcode</a>
+  
+    <li><a href="./SycBarcodeTest.html">SycBarcodeTest</a>
   
     <li><a href="./Visual.html">Visual</a>
   
@@ -83,8 +107,7 @@
   
 <h1 id="label-Barcode"><a href="Barcode.html">Barcode</a></h1>
 
-<p>Creating barcodes (at the moment only <a
-href="Interleave2of5.html">Interleave2of5</a>).</p>
+<p>Creating barcodes (at the moment only Interleaved2of5).</p>
 
 <h2 id="label-Usage">Usage</h2>
 
@@ -96,8 +119,26 @@ barcode = i2o5.barcode
 pdf = Prawn::Document.new
 barcode.to_pdf(pdf)</pre>
 
+<p>When used with rails add</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'interleave2of5'</span>
+</pre>
+
+<p>to config/application.rb</p>
+
 <p>The barcode can be used to create a graphical representation of the
 barcode.</p>
+
+<h2 id="label-Release+Notes">Release Notes</h2>
+<ul><li>
+<p>Version 0.0.1 Create barcode Interleaved 2 of 5 that can be added to a pdf
+file</p>
+</li><li>
+<p>Version 0.0.2 Fix check digit calculation</p>
+</li><li>
+<p>Version 0.0.3 Add valid? to check whether a decoded value (e.g. by a
+barcode scanner) is valid</p>
+</li></ul>
 
 <h2 id="label-Licencse">Licencse</h2>
 

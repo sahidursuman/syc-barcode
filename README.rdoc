@@ -22,5 +22,9 @@ The barcode can be used to create a graphical representation of the barcode.
 * Version 0.0.2
   Fix check digit calculation
 
+* Version 0.0.3
+  Add valid? to check whether a decoded value (e.g. by a barcode scanner) is
+  valid
+
 == Licencse
 Barcode is published under the MIT license

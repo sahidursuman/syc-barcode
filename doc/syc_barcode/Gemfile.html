@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>module CheckedAttributes::ClassMethods - RDoc Documentation</title>
+<title>Gemfile - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
 
 
-<body id="top" class="module">
+<body class="file">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -42,34 +42,6 @@
   <ul id="search-results" class="initially-hidden"></ul>
 </nav>
 
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/checked_attributes.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-attr_checked">#attr_checked</a>
-    
-  </ul>
-</nav>
-
-  </div>
 
   <div id="project-metadata">
     <nav id="fileindex-section" class="section project-section">
@@ -131,77 +103,25 @@
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="module">module CheckedAttributes::ClassMethods</h1>
-
-  <div id="description" class="description">
-    
-<p>Creates the <a
-href="ClassMethods.html#method-i-attr_checked">#attr_checked</a> method</p>
-
-  </div><!-- description -->
-
+<div id="documentation" class="description">
   
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
+<p>source “<a href="http://rubygems.org">rubygems.org</a>”</p>
 
-    
+<p># Declare your gem’s dependencies in syc_barcode.gemspec. # Bundler will
+treat runtime dependencies like base dependencies, and # development
+dependencies will be added by default to the :development group. gemspec</p>
 
-    
+<p># jquery-rails is used by the dummy application gem “jquery-rails”</p>
 
-    
+<p># Declare any dependencies that are still in development here instead of in
+# your gemspec. These might include edge Rails or gems from your path or #
+Git. Remember to move these dependencies to your gemspec before releasing #
+your gem to rubygems.org.</p>
 
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+<p># To use debugger # gem ‘debugger’</p>
 
-    
-      <div id="method-i-attr_checked" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">attr_checked</span><span
-            class="method-args">(attribute, &validation)</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
+</div>
 
-        <div class="method-description">
-          
-          <p><a href="ClassMethods.html#method-i-attr_checked">#attr_checked</a>
-evaluates whether the value is valid</p>
-          
-
-          
-          <div class="method-source-code" id="attr_checked-source">
-            <pre><span class="ruby-comment"># File lib/checked_attributes.rb, line 13</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">attr_checked</span>(<span class="ruby-identifier">attribute</span>, &amp;<span class="ruby-identifier">validation</span>)
-  <span class="ruby-identifier">define_method</span> <span class="ruby-node">&quot;#{attribute}=&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">validation</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">value</span>)
-    <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{attribute}&quot;</span>, <span class="ruby-identifier">value</span>)
-  <span class="ruby-keyword">end</span>
-
-  <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">attribute</span> <span class="ruby-keyword">do</span>
-    <span class="ruby-identifier">instance_variable_get</span> <span class="ruby-node">&quot;@#{attribute}&quot;</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div><!-- attr_checked-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- attr_checked-method -->
-
-    
-    </section><!-- public-instance-method-details -->
-  
-  </section><!-- 5Buntitled-5D -->
-
-</div><!-- documentation -->
 
 
 <footer id="validator-badges">
